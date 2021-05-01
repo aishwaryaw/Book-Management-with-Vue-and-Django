@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+djangorestframework = "*"
+django-rest-auth = "*"
+pillow = "*"
+django-cors-headers = "*"
+dj-database-url = "*"
+django-storages = "*"
+gunicorn = "*"
+boto3 = "*"
+whitenoise = "*"
+psycopg2 = "*"
+django-allauth = "*"
+python-dotenv = "*"
+
+[requires]
+python_version = "3.8"
