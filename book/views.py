@@ -7,6 +7,7 @@ from .serializers import BookSerializer
 import os
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 # Create your views here.
 
 class BookViewSet(viewsets.ViewSet):
@@ -82,6 +83,11 @@ class BookViewSet(viewsets.ViewSet):
             return Response({"message":"Id does not exist"}, status=HTTP_404_NOT_FOUND)
 
 
+#  For posting images from backend
+@api_view(['POST'])
+def post_image(request):
+    image = request.data
+    return Response(status=HTTP_201_CREATED)
 
 
 
