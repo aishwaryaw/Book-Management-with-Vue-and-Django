@@ -74,6 +74,9 @@ class BookSerializer(serializers.ModelSerializer):
     def validate_title(self,value):
         if not bool(re.match('[a-zA-Z0-9\s]+$', value)):
             raise serializers.ValidationError("Only alphabets, numbers and spaces are allowed")
+        elif Book.objects.filter(title=value).exists():
+            raise serializers.ValidationError("Book with same title already exists.Please enter other book title")
+     
         return value
     
     def validate_author(self,value):
