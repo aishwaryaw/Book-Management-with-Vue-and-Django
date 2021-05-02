@@ -19,7 +19,7 @@
 
         <el-form-item>
           <el-upload v-if="fileList[0].url != ''"
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="https://book-management-vue-django.herokuapp.com/api/book_image/"
             list-type="picture-card"
             :on-preview="handlePictureCardPreview"
             :limit="1"
@@ -32,7 +32,7 @@
             </el-upload>
 
          <el-upload v-else
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="https://book-management-vue-django.herokuapp.com/api/book_image/"
             list-type="picture-card"
             :on-preview="handlePictureCardPreview"
             :limit="1"
@@ -104,16 +104,16 @@ export default {
 
       // 3. This method will run  just before file upload
       handleBeforeUpload(file) {
-        const isJPG = file.type === 'image/jpeg';
+        const isImage = file.type === 'image/jpeg' || file.type === 'image/png';
         const isLt2M = file.size / 1024 / 1024 < 2;
 
-        if (!isJPG) {
-          this.$message.error('Book picture must be JPG format!');
+        if (!isImage) {
+          this.$message.error('Book picture must be JPG/PNG format!');
         }
         if (!isLt2M) {
           this.$message.error('Book picture size can not exceed 2MB!');
         }
-        return isJPG && isLt2M;
+        return isImage && isLt2M;
       },
 
       // 4. This method will run after the image file has been uploaded successfully.
