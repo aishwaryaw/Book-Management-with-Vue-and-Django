@@ -9,9 +9,9 @@
           <div><h5><i>Book author : {{book.author}}</i></h5></div>
           <div class="bottom clearfix">
             <el-row>
-              <el-tooltip class="item" effect="dark" content="View description of book" placement="bottom"><el-button type="info" icon="el-icon-info" @click="dialogVisible = true" round>Description</el-button></el-tooltip>
-              <el-tooltip class="item" effect="dark" content="Edit book" placement="bottom"><el-button type="primary" icon="el-icon-edit" @click="()=>$router.push(`/book/edit/${book.id}`)" round></el-button></el-tooltip>
-              <el-tooltip class="item" effect="dark" content="Delete a book" placement="bottom"><el-button type="danger" icon="el-icon-delete" @click="deletedialogVisible=true" round></el-button></el-tooltip>
+              <el-col :span="12"><el-tooltip class="item" effect="dark" content="View description of book" placement="bottom"><el-button type="info" icon="el-icon-info" @click="dialogVisible = true" round>Description</el-button></el-tooltip></el-col>
+              <el-col :span="6"><el-tooltip class="item" effect="dark" content="Edit book" placement="bottom"><el-button type="primary" icon="el-icon-edit" @click="()=>$router.push(`/book/edit/${book.id}`)" round></el-button></el-tooltip></el-col>
+              <el-col :span="6"><el-tooltip class="item" effect="dark" content="Delete a book" placement="bottom"><el-button type="danger" icon="el-icon-delete" @click="deletedialogVisible=true" round></el-button></el-tooltip></el-col>
             </el-row>
           </div>
         </div>
