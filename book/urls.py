@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import BookViewSet
+from .views import BookViewSet, post_image
 
 urlpatterns = [
     path('books/', BookViewSet.as_view({
@@ -11,6 +11,7 @@ urlpatterns = [
         'get' : 'singleBook',
         'put' : 'updateBook',
         'delete' : 'deleteBook'
-    }))
+    })),
+    path('book_image/', post_image)
 
 ]
